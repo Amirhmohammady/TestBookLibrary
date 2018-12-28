@@ -23,6 +23,7 @@ public class BookTO {
     }
 
     public Clob getText() {
+        //text = "asdasdasdasdassdasad";
         return text;
     }
 
