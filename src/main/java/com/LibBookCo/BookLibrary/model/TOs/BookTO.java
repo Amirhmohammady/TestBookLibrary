@@ -1,6 +1,7 @@
 package com.LibBookCo.BookLibrary.model.TOs;
 
 import java.sql.Clob;
+import java.sql.SQLException;
 
 /**
  * Created by Amir on 12/28/2018.
@@ -23,7 +24,11 @@ public class BookTO {
     }
 
     public Clob getText() {
-        //text = "asdasdasdasdassdasad";
+        /*try {
+            text =  new javax.sql.rowset.serial.SerialClob(new String("asdasdasdasdassdasad").toCharArray());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }*/
         return text;
     }
 
