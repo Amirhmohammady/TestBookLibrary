@@ -51,7 +51,7 @@ font-size: 1rem;line-height: 1.5;color: #212529;">
     </div>
     <div style="display: flex;">
         <div style="flex: 50%;border:2px solid #999999;padding:1rem;margin:1rem;background-color:#00c3ff;border-radius:0.5rem;">
-            <%new RequestController(request)%>
+            <%new RequestController(request);%>
             <table style="width:100%" border="1">
                 <tr>
                     <th>ID</th>

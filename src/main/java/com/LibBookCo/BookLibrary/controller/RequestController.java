@@ -1,4 +1,4 @@
-package com.LibBookCo.BookLibrary.controller.requestcontroller;
+package com.LibBookCo.BookLibrary.controller;
 
 
 import javax.servlet.http.HttpServletRequest;
@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 public class RequestController {
     public RequestController(HttpServletRequest request){
         RequestOBJ requestOBJ = new RequestOBJ(request);
+
     }
 
 }
