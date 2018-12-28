@@ -1,4 +1,4 @@
-package MehdiAfsariBook.BookLibrary.model.TOs;
+package com.LibBookCo.BookLibrary.model.TOs;
 
 import java.sql.Clob;
 
