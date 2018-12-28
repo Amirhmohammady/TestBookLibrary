@@ -6,7 +6,7 @@
     <session-factory>
         <property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
         <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:orcl</property>
-        <property name="hibernate.connection.username">amircontact</property>
+        <property name="hibernate.connection.username">lib</property>
         <property name="hibernate.connection.password">abcd1234</property>
         <property name="hibernate.hbm2ddl.auto">create-drop</property>
         <property name="hibernate.c3p0.max_size">20</property>
@@ -14,6 +14,6 @@
         <property name="show_sql">true</property>
 
         <property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>
-        <mapping resource="Model/To/contact.hbm.xml"/>
+        <mapping resource="com/LibBookCo/BookLibrary/model/TOs/contact.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>
