@@ -56,7 +56,7 @@ public class BookTO {
         return ID;
     }
 
-    public void setID(long ID) {
+    private void setID(long ID) {
         this.ID = ID;
     }
 
