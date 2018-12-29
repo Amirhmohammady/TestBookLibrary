@@ -56,6 +56,10 @@ public class BookTO {
         return ID;
     }
 
+    public void setID(long ID) {
+        this.ID = ID;
+    }
+
     public String getName() {
         return name;
     }

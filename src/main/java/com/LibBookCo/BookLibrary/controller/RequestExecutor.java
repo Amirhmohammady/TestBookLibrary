@@ -13,14 +13,15 @@ public class RequestExecutor {
     List<BookTO> searchresult;
 
     public RequestExecutor(RequestOBJ requestOBJ) {
-        switch (requestOBJ.getMethod()) {
-            case "add":
-                addToDatabase(requestOBJ.getBookTO());
-                break;
-            case "search":
-                searchFromDatabase(requestOBJ.getBookTO());
-                break;
-        }
+        if (requestOBJ.getMethod() != null)
+            switch (requestOBJ.getMethod()) {
+                case "add":
+                    addToDatabase(requestOBJ.getBookTO());
+                    break;
+                case "search":
+                    searchFromDatabase(requestOBJ.getBookTO());
+                    break;
+            }
     }
 
     private void addToDatabase(BookTO bookTO) {

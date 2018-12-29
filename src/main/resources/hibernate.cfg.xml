@@ -14,6 +14,6 @@
         <property name="show_sql">true</property>
 
         <property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>
-        <mapping resource="com/LibBookCo/BookLibrary/model/TOs/contact.hbm.xml"/>
+        <mapping resource="com/LibBookCo/BookLibrary/model/TOs/book.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>

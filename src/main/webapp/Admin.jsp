@@ -1,4 +1,4 @@
-<%@ page import="com.LibBookCo.BookLibrary.controller.requestcontroller.RequestController" %>
+<%@ page import="com.LibBookCo.BookLibrary.controller.RequestController" %>
 <!DOCTYPE html>
 <html lang="en-US">
 <head>

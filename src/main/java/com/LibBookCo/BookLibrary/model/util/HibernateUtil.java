@@ -9,15 +9,19 @@ import org.hibernate.cfg.Configuration;
  */
 public class HibernateUtil {
     private static SessionFactory sessionFactory;
-    static{
+
+    public HibernateUtil() {
         try {
-            sessionFactory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();//Configuration().configure().buildSessionFactory();
-        }catch (Exception e){
-            System.out.println(e);
+            if (sessionFactory == null)
+                sessionFactory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();//Configuration().configure().buildSessionFactory();
+        } catch (Exception e) {
+            System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>1");
+            e.printStackTrace();
+            System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<1");
         }
     }
 
-    public static Session getSessin(){
+    public Session getSessin() {
         return sessionFactory.openSession();
     }
 }

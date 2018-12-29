@@ -1,4 +1,5 @@
 package com.LibBookCo.BookLibrary.model.bl;
+
 import com.LibBookCo.BookLibrary.model.TOs.BookTO;
 import com.LibBookCo.BookLibrary.model.util.HibernateUtil;
 import org.hibernate.Session;
@@ -13,35 +14,42 @@ public class BookManager {
     private Session session;
     private Transaction transaction;
 
-    public long insert(BookTO bookTO){
+    public long insert(BookTO bookTO) {
         openSession();
-        long t  = (long) session.save(bookTO);
+        long t = 0;
+        if (session != null) t = (long) session.save(bookTO);
         closeSession();
         return t;
     }
-    public void update(BookTO bookTO){
+
+    public void update(BookTO bookTO) {
         openSession();
-        session.saveOrUpdate(bookTO);
+        if (session != null) session.saveOrUpdate(bookTO);
         closeSession();
     }
-    public void remove(long ID){
+
+    public void remove(long ID) {
         openSession();
         closeSession();
     }
-    public List<BookTO> search(){
+
+    public List<BookTO> search() {
         openSession();
-        List<BookTO> contactTOs = session.createQuery("from com.LibBookCo.BookLibrary.model.TOs.BookTO").list();
+        List<BookTO> contactTOs;
+        if (session != null) contactTOs = session.createQuery("from com.LibBookCo.BookLibrary.model.TOs.BookTO").list();
         closeSession();
         return null;
     }
+
     public void openSession() {
         try {
-            session= HibernateUtil.getSessin();
-        transaction = session.beginTransaction();
-        }catch (Exception e) {
+            session = new HibernateUtil().getSessin();
+            transaction = session.beginTransaction();
+        } catch (Exception e) {
             System.out.println(e);
         }
     }
+
     public void closeSession() {
         //session.saveOrUpdate(personTO);
         transaction.commit();
