@@ -46,13 +46,17 @@ public class BookManager {
             session = new HibernateUtil().getSessin();
             transaction = session.beginTransaction();
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
     }
 
     public void closeSession() {
         //session.saveOrUpdate(personTO);
-        transaction.commit();
-        session.close();
+        try {
+            if (transaction != null) transaction.commit();
+            if (session != null) session.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
