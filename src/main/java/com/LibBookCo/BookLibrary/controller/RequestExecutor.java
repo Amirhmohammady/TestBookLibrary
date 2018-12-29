@@ -11,6 +11,7 @@ import java.util.List;
 public class RequestExecutor {
     long addresult;
     List<BookTO> searchresult;
+
     public RequestExecutor(RequestOBJ requestOBJ) {
         switch (requestOBJ.getMethod()) {
             case "add":
@@ -21,10 +22,20 @@ public class RequestExecutor {
                 break;
         }
     }
-    private long addToDatabase(BookTO bookTO){
+
+    private void addToDatabase(BookTO bookTO) {
+        addresult = new BookManager().insert(bookTO);
+    }
+
+    private void searchFromDatabase(BookTO bookTO) {
+
+    }
+
+    public long getAddResult() {
         return addresult;
     }
-    private List<BookTO> searchFromDatabase(BookTO bookTO){
+
+    public List<BookTO> getSearchResult() {
         return searchresult;
     }
 }

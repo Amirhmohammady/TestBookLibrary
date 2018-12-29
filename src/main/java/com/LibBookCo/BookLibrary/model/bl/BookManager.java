@@ -13,10 +13,11 @@ public class BookManager {
     private Session session;
     private Transaction transaction;
 
-    public void insert(BookTO bookTO){
+    public long insert(BookTO bookTO){
         openSession();
-
+        long t  = (long) session.save(bookTO);
         closeSession();
+        return t;
     }
     public void update(BookTO bookTO){
         openSession();
