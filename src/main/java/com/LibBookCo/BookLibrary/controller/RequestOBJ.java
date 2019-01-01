@@ -25,7 +25,7 @@ public class RequestOBJ {
             bookTO.setISBN(request.getParameter("isbn"));
             method = request.getParameter("method");
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
     }
 

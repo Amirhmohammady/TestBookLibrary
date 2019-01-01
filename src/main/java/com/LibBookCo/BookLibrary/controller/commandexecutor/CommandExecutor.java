@@ -10,7 +10,7 @@ import java.util.List;
  * Created by Amir on 12/24/2018.
  */
 public class CommandExecutor {
-    MethodOBJ searchresult, issearchsucces, addcontact, isaddsucces, removecontact, isremoved;
+    MethodOBJ searchresult, issearchsucces, addbook, isaddsucces, removebook, isremoved;
     BookTO bookTO;
     List<String> result;
     BookManager bookManager;
@@ -18,9 +18,9 @@ public class CommandExecutor {
     public CommandExecutor(BookTO bookTO) {
         searchresult = new MethodOBJ();
         issearchsucces = new MethodOBJ();
-        addcontact = new MethodOBJ();
+        addbook = new MethodOBJ();
         isaddsucces = new MethodOBJ();
-        removecontact = new MethodOBJ();
+        removebook = new MethodOBJ();
         isremoved = new MethodOBJ();
         this.bookTO = bookTO;
         bookManager = new BookManager();
@@ -31,21 +31,21 @@ public class CommandExecutor {
     }
 
     public List<String> isAddSucces() {
-        if (addcontact.isdone == 3) addContact();
+        if (addbook.isdone == 3) addBook();
         if (isaddsucces.isdone == 3) {
-            if (searchresult.output.size() > 0) isaddsucces.output.add("Successfully Added Contact.");
-            else isaddsucces.output.add("Can not Add Contact.");
+            if (searchresult.output.size() > 0) isaddsucces.output.add("Successfully Added Book.");
+            else isaddsucces.output.add("Can not Add Book.");
             isaddsucces.isdone = 1;
         }
         return isaddsucces.output;
     }
 
-    public List<String> addContact() {
-        if (addcontact.isdone == 3) {
+    public List<String> addBook() {
+        if (addbook.isdone == 3) {
             bookManager.update(bookTO);
-            addcontact.output.add(bookTO.getName());
+            addbook.output.add(bookTO.getName());
         }
-        return addcontact.output;
+        return addbook.output;
     }
 
     public List<String> isSearchSucces() {

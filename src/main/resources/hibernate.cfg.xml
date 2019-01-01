@@ -8,7 +8,7 @@
         <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:orcl</property>
         <property name="hibernate.connection.username">lib</property>
         <property name="hibernate.connection.password">abcd1234</property>
-        <property name="hibernate.hbm2ddl.auto">create-drop</property>
+        <!--property name="hibernate.hbm2ddl.auto">create-drop</property-->
         <property name="hibernate.c3p0.max_size">20</property>
         <property name="hibernate.c3p0.timeout">300</property>
         <property name="show_sql">true</property>
