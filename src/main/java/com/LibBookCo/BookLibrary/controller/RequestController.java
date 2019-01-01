@@ -8,14 +8,15 @@ import javax.servlet.http.HttpServletRequest;
  */
 public class RequestController {
     RequestExecutor requestExecutor;
+    ResultOBJ resultOBJ = new ResultOBJ();
 
     public RequestController(HttpServletRequest request) {
         RequestOBJ requestOBJ = new RequestOBJ(request);
-        requestExecutor = new RequestExecutor(requestOBJ);
+        requestExecutor = new RequestExecutor(requestOBJ, resultOBJ);
     }
 
-    public long getAddResult() {
-        return requestExecutor.getAddResult();
+    public ResultOBJ getResult() {
+        return resultOBJ;
     }
 
 

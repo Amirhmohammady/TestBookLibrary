@@ -22,6 +22,8 @@ public class HibernateUtil {
     }
 
     public Session getSessin() {
-        return sessionFactory.openSession();
+        if (sessionFactory != null)
+            return sessionFactory.openSession();
+        return null;
     }
 }

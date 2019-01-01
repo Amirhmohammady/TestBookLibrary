@@ -1,0 +1,57 @@
+<root>
+	<page name="Admin.jsp">
+		<positionsNum>2</positionsNum>
+		<method name="search">
+			<access>30</access>
+			<position id="1">
+				<out type="methodopt">isSearchSucces</out>
+			</position>
+			<position id="2">
+				<out type="string">Search Result:\n</out>
+				<out type="methodopt">searchResult</out>
+			</position>
+		</method>
+		<method name="add">
+			<access>30</access>
+			<position id="1">
+				<out type="methodopt">isAddSucces</out>
+			</position>
+			<position id="2">
+				<out type="methodopt">addBook</out>
+				<out type="string">\nIs Added.</out>
+			</position>
+		<position id="2"></position>
+		</method>
+		<method name="remove">
+		<access>30</access>
+			<position id="1">
+				<out type="methodopt">isRemoved</out>
+			</position>
+			<position id="2">
+				<out type="methodopt">removeBook</out>
+				<out type="string">\nIs Removed.</out>
+			</position>
+		<position id="2"></position>
+		</method>
+	</page>
+	<page name="User">
+		<positions>1</positions>
+		<method name="search">
+		<access>20</access>
+			<position id="1">
+				<out type="string">Search Result:\n</out>
+				<out type="methodopt">searchResult</out>
+			</position>
+		</method>
+	</page>
+	<page name="Guest">
+		<method name="search">
+		<positionsNum>1</positionsNum>
+		<access>10</access>
+			<position id="1">
+				<out type="string">Search Result:\n</out>
+				<out type="methodopt">searchResult</out>
+			</position>
+		</method>
+	</page>
+</root>
