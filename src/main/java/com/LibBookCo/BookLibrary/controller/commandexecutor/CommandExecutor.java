@@ -33,7 +33,7 @@ public class CommandExecutor {
     public List<String> isAddSucces() {
         if (addbook.isdone == 3) addBook();
         if (isaddsucces.isdone == 3) {
-            if (searchresult.output.size() > 0) isaddsucces.output.add("Successfully Added Book.");
+            if (addbook.output.size() > 0) isaddsucces.output.add("Successfully Added Book.");
             else isaddsucces.output.add("Can not Add Book.");
             isaddsucces.isdone = 1;
         }

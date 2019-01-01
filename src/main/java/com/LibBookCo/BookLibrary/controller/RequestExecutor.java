@@ -25,7 +25,7 @@ public class RequestExecutor {
         commandExecutor = new CommandExecutor(requestOBJ.getBookTO());
         if (requestOBJ.getMethod() != null) {
             try {
-                xmlPropertyGetter = new XMLPropertyGetter();
+                //xmlPropertyGetter = new XMLPropertyGetter();
                 XMLPropertyGetter.setPageXML("D:/Developer/apache-tomcat-9.0.0.M20-windows-x86/webapps/BookLibrary/WEB-INF/classes/page.xml");
                 xmlPropertyGetter = XMLPropertyGetter.getStruct();
                 positionsNum = xmlPropertyGetter.getPage(requestOBJ.getPage()).getPositionsNum();
@@ -50,10 +50,6 @@ public class RequestExecutor {
 
     void doOutPut(List<Out> outs, int position) {
         for (Out out : outs) {
-            List<String> temp = new ArrayList<>();
-            temp.add("1");
-            temp.add("2");
-            resultOBJ.htmlout.get(0).addAll(temp);
             if (out.getType().equals("string")) resultOBJ.htmlout.get(position - 1).add(out.getValue());
             else if (out.getType().equals("methodopt"))
                 resultOBJ.htmlout.get(position - 1).addAll(methodopt(out.getValue()));
